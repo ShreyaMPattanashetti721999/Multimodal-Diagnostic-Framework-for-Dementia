@@ -49,7 +49,30 @@ Ensure you have the following installed:
   - Librosa (for audio feature extraction)
   - Hugging Face Transformers (for BioBERT, Clinical BERT, RoBERTa, and DistilBERT)
 
-To install these dependencies, use:
+## Dataset
+- **Pitt Corpus**: Available from [TalkBank](https://dementia.talkbank.org/access/English/Pitt.html). This dataset includes audio recordings and transcriptions, formatted to capture linguistic and acoustic markers indicative of cognitive impairments.
 
-```bash
-pip install -r requirements.txt
+## Usage
+1. **Data Preparation**: Follow scripts in `data_preprocessing/` to clean, normalize, and preprocess audio and text data.
+2. **Feature Extraction**: Use `feature_extraction/` to derive linguistic and acoustic features.
+3. **Model Training**:
+   - Run `train_text_model.py` for text-only models.
+   - Run `train_audio_model.py` for audio-only models.
+   - Run `train_multimodal_model.py` for multimodal models.
+4. **Evaluation**: Use `evaluate_model.py` to assess model performance and generate classification reports.
+
+## Results
+Multimodal models achieved a notable improvement in classification accuracy, precision, and recall, particularly using BioBERT in combination with optimized dropout and regularization settings. Detailed results, including per-class analyses and comparisons across models, are available in `results/`.
+
+## Acknowledgments
+Special thanks to Dr. Matthew Purver for guidance, and to the TalkBank team for access to the Pitt Corpus. This project is part of the MSc Artificial Intelligence program at University of London - Queen Mary.
+
+## Citation
+If you use this project in your research, please cite:
+
+```bibtex
+@misc{pattanashetti2024multimodal,
+  author = {Shreya Murigendra Pattanashetti},
+  title = {Multimodal Diagnostic Framework for Dementia: Integrating Textual and Acoustic Data for Enhanced Classification Accuracy},
+  year = {2024}
+}
