@@ -52,14 +52,46 @@ Ensure you have the following installed:
 ## Dataset
 - **Pitt Corpus**: Available from [TalkBank](https://dementia.talkbank.org/access/English/Pitt.html). This dataset includes audio recordings and transcriptions, formatted to capture linguistic and acoustic markers indicative of cognitive impairments.
 
-## Usage
-1. **Data Preparation**: Follow scripts in `data_preprocessing/` to clean, normalize, and preprocess audio and text data.
-2. **Feature Extraction**: Use `feature_extraction/` to derive linguistic and acoustic features.
-3. **Model Training**:
-   - Run `train_text_model.py` for text-only models.
-   - Run `train_audio_model.py` for audio-only models.
-   - Run `train_multimodal_model.py` for multimodal models.
-4. **Evaluation**: Use `evaluate_model.py` to assess model performance and generate classification reports.
+Prerequisites
+Ensure you have Python installed on your system. It's recommended to use Python 3.8 or later. You will also need Jupyter Notebook or JupyterLab to open and execute the notebook files.
+
+Installation
+
+Install required Python libraries. Each notebook should contain specific library requirements at the top, but you can install the most common ones by running:
+
+pip install numpy pandas jupyterlab torch transformers sklearn librosa
+
+Running the Experiments
+Each experiment is detailed in a separate Jupyter Notebook. Below is a description of what each file represents and the models they pertain to:
+
+Try9finalmultimodalalabels500pochs100- Clinical BERT without regularization, dropout, Batch Normalization
+Try10reg01finalmultimodalalabels500pochs100- Clinical BERT with reg 0.01 without dropout, Batch Normalization
+Try11reg1finalmultimodalalabels500pochs100- Clinical BERT with reg 0.1 without dropout, Batch Normalization.
+vistry12dlbnreg1finalmultimodalalabels500pochs100- Clinical BERT with reg 0.1, dropout 0.3, Batch Normalization.
+try13biobertdl5bnreg1multimodalalabels500pochs100- BioBERT with reg 0.1, dropout 0.5, Batch Normalization.
+try14robertadl5bnreg1multimodalalabels500pochs100- BioBERT with reg 0.1, dropout 0.5, Batch Normalization.
+try15disbertdl5bnreg1multimodalalabels500pochs100- DistilBERT with reg 0.1, dropout 0.5, Batch Normalization.
+vistry16perclassbiobert- BioBERT with reg 0.1, dropout 0.5, Batch Normalization. 
+vistry17bioberttext1- Text only model with BioBERT
+vistry18distilberttext- Text only model with DistilBERT
+vistry19robertatext-2- Text only model with RoBERTa.
+vistry20clinicalberttext- Text only model with Clinical BERT
+vistry21model1perclassaudio-2- Audio only model
+vischitry22robertamultimodalalabels- RoBERTa with reg 0.1, dropout 0.5, Batch Normalization.
+
+Each notebook will guide you through:
+
+Data loading and preprocessing.
+Model setup and configuration.
+Training the model with specified parameters.
+Evaluating the model's performance on test data.
+Visualizing the results and metrics like accuracy, precision, recall, and F1-score.
+Data
+The datasets used in these experiments are located in the public Google Drive folder. Make sure to adjust the file paths in each notebook according to where you have stored the data on your local machine.
+
+Additional Notes
+Ensure that your environment has sufficient resources (CPU/GPU, RAM) to handle the computations required by these models.
+It might be necessary to adjust hyperparameters or model configurations based on the specific characteristics of the hardware being used.
 
 ## Results
 Multimodal models achieved a notable improvement in classification accuracy, precision, and recall, particularly using BioBERT in combination with optimized dropout and regularization settings. Detailed results, including per-class analyses and comparisons across models, are available in `results/`.
