@@ -52,16 +52,16 @@ Ensure you have the following installed:
 ## Dataset
 - **Pitt Corpus**: Available from [TalkBank](https://dementia.talkbank.org/access/English/Pitt.html). This dataset includes audio recordings and transcriptions, formatted to capture linguistic and acoustic markers indicative of cognitive impairments.
 
-Prerequisites
+## Prerequisites
 Ensure you have Python installed on your system. It's recommended to use Python 3.8 or later. You will also need Jupyter Notebook or JupyterLab to open and execute the notebook files.
 
-Installation
+## Installation
 
 Install required Python libraries. Each notebook should contain specific library requirements at the top, but you can install the most common ones by running:
 
 pip install numpy pandas jupyterlab torch transformers sklearn librosa
 
-Running the Experiments
+## Running the Experiments
 Each experiment is detailed in a separate Jupyter Notebook. Below is a description of what each file represents and the models they pertain to:
 
 Try9finalmultimodalalabels500pochs100- Clinical BERT without regularization, dropout, Batch Normalization
@@ -80,21 +80,18 @@ vistry21model1perclassaudio-2- Audio only model
 vischitry22robertamultimodalalabels- RoBERTa with reg 0.1, dropout 0.5, Batch Normalization.
 
 Each notebook will guide you through:
-
 Data loading and preprocessing.
 Model setup and configuration.
 Training the model with specified parameters.
 Evaluating the model's performance on test data.
 Visualizing the results and metrics like accuracy, precision, recall, and F1-score.
-Data
-The datasets used in these experiments are located in the public Google Drive folder. Make sure to adjust the file paths in each notebook according to where you have stored the data on your local machine.
-
-Additional Notes
-Ensure that your environment has sufficient resources (CPU/GPU, RAM) to handle the computations required by these models.
-It might be necessary to adjust hyperparameters or model configurations based on the specific characteristics of the hardware being used.
 
 ## Results
 Multimodal models achieved a notable improvement in classification accuracy, precision, and recall, particularly using BioBERT in combination with optimized dropout and regularization settings. Detailed results, including per-class analyses and comparisons across models, are available in `results/`.
+
+## Additional Notes
+Ensure that your environment has sufficient resources (CPU/GPU, RAM) to handle the computations required by these models.
+It might be necessary to adjust hyperparameters or model configurations based on the specific characteristics of the hardware being used.
 
 ## Acknowledgments
 Special thanks to Dr. Matthew Purver for guidance, and to the TalkBank team for access to the Pitt Corpus. This project is part of the MSc Artificial Intelligence program at University of London - Queen Mary.
